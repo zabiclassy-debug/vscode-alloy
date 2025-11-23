@@ -17,7 +17,7 @@ export function activate(_: vscode.ExtensionContext) {
       provideDocumentFormattingEdits(
         document: vscode.TextDocument
       ): vscode.TextEdit[] {
-        exec("alloy fmt -w " + document.fileName, (error, stdout, stderr) => {
+        exec(" -w " + document.fileName, (error, stdout, stderr) => {
           if (error) {
             vscode.window.showErrorMessage(`Error: ${error.message}`);
           } else if (stderr) {
